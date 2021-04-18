@@ -1,0 +1,14 @@
+$body-bg: #fff;
+$body-color: #000;
+
+$enable-rounded: false;
+$enable-shadows: false;
+
+
+$theme-colors: (
+    "primary": #000,
+    "secondary": #a9a9a9
+);
+
+@import '~bootstrap/scss/bootstrap.scss';
+

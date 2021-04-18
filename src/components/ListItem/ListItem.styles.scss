@@ -1,0 +1,18 @@
+.todolist {
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid red;
+        
+        &.checked {
+            border-color: blue;
+        }
+
+        input[type=checkbox] {
+            transform: scale(1.5);
+        }
+    }
+}
