@@ -6,14 +6,16 @@ const AddItemForm = ({ onAdd }) => {
     const [text, setText] = useState('');
 
     const onSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
     
         if (!text) {
             alert('Please add a task')
             return
         }
 
-        console.log(text);
+        onAdd(text);
+
+        setText('');
     }
 
     return (
@@ -24,7 +26,7 @@ const AddItemForm = ({ onAdd }) => {
                     <input type="text" name="todo" placeholder="e.g. Buy Milk, Go to dentist" value={text} onChange={(e) => setText(e.target.value)} />
                 </div>
 
-                <input type="submit" value="Add Item"/>
+                <input type="submit" value="Add Item" className="btn btn-secondary" />
             </form>
         </div>
     )

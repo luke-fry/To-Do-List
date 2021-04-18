@@ -55,14 +55,26 @@ class ToDoList extends React.Component {
     this.setState({showAddItemForm: !showAddItemForm});
   }
 
-  addItem = (e) => {
-    console.log(e)
+  addItem = (text) => {
+    const { toDoList } = this.state;
+    const newID = toDoList.length + 1;
+    console.log("Add Item Function Task:", text);
+
+    console.log(toDoList.length);
+
+    const newValue = {
+      id: newID,
+      item: text,
+      checked: false
+    }
+
+    this.setState({ toDoList: [...this.state.toDoList, newValue]});
   }
   
   render() {
     return (
       <div className="ToDoList">
-        <Header showForm={this.displayAddItemForm} />
+        <Header showForm={this.displayAddItemForm} showFormStatus={this.state.showAddItemForm} />
         {this.state.showAddItemForm && <AddItemForm onAdd={this.addItem}/>}
         <ListBlock toDoList={this.state.toDoList} updateListItem={this.updateListItem} />
         <Footer />
